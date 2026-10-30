@@ -14,7 +14,7 @@ justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
 .kind {font-size:12px;color:#746b63;} .phrase {font-size:19px;font-weight:650; overflow-wrap:anywhere;}
 </style>""", unsafe_allow_html=True)
 
-FILE = Path(__file__).resolve().parent.parent / "57577_cards.xlsx"
+FILE = Path(__file__).resolve().parent / "57577_cards.xlsx"
 PATTERN = [5, 7, 5, 7, 7]
 FIELD_COUNTS = {5: 3, 7: 5}
 
