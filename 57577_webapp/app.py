@@ -60,7 +60,7 @@ def card_html(phrase, n):
     return f'<div class="card {cls}"><div class="kind">{n}音</div><div class="phrase">{html.escape(phrase)}</div></div>'
 
 st.title('57577')
-st.caption('言葉をつなぎ、五・七・五・七・七の短歌をつくろう。')
+st.caption('短歌をつくろう。')
 if not FILE.exists():
     st.error('57577_cards.xlsx が見つかりません。app.py と同じフォルダに置いてください。')
     st.stop()
@@ -76,8 +76,6 @@ g = st.session_state.game
 with st.sidebar:
     st.header('あそびかた')
     st.write('① 手札を1枚選択  ② 同じ音数の場札を選択  ③ 交換ボタンを押す')
-    st.write('交換するとその場札を山札から1枚補充します。次のラウンドでは場札をすべて入れ替えます。')
-    st.write('1ラウンド最大3回、全2ラウンド。交換せずに次へ進むこともできます。')
     if st.button('新しいゲーム', use_container_width=True):
         start_game()
         st.rerun()
@@ -153,7 +151,7 @@ else:
     st.success('短歌が完成しました！')
     poem = '\n'.join(g['hand'])
     st.code(poem, language=None)
-    st.download_button('短歌をテキスト保存', poem, file_name='57577_tanka.txt', mime='text/plain')
+    st.download_button('短歌をテキスト保存',type='primary', poem, file_name='57577_tanka.txt', mime='text/plain')
     if st.button('もう一度遊ぶ', type='primary'):
         start_game()
         st.rerun()
