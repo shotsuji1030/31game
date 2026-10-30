@@ -4,7 +4,7 @@ import random
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="57577 | 短歌カードゲーム", page_icon="🌸", layout="wide")
+st.set_page_config(page_title="31 | 短歌カードゲーム", page_icon="㉛", layout="wide")
 st.markdown("""<style>
 .stApp {background: #faf8f3; color: #29251f;}
 .card {border: 1px solid #d9d1c4; border-radius: 16px; padding: 20px 8px;
@@ -81,7 +81,7 @@ def card_html(phrase, n):
     import html
     return f'<div class="card {cls}"><div class="kind">{n}音</div><div class="phrase">{html.escape(phrase)}</div></div>'
 
-st.title('57577')
+st.title('31')
 st.caption('短歌をつくろう。')
 if not FILE.exists():
     st.error('57577_cards.xlsx が見つかりません。app.py と同じフォルダに置いてください。')
