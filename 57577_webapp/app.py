@@ -11,7 +11,15 @@ st.markdown("""<style>
 text-align:center; background:white; min-height:110px; display:flex; flex-direction:column;
 justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
 .card.five {background:#e9f3fa;} .card.seven {background:#fceee5;}
-.kind {font-size:12px;color:#746b63;} .phrase {font-size:19px;font-weight:650; overflow-wrap:anywhere;}
+.kind {font-size:12px;color:#746b63;} .phrase {font-size:19px;font-weight:650; overflow-wrap:anywhere; color:#29251f;}
+/* 選択状態を黒ではなく明るい青緑に統一 */
+.stButton > button[kind="primary"], .stDownloadButton > button[kind="primary"] {
+ background-color:#167d78 !important; color:#ffffff !important; border:2px solid #167d78 !important;
+}
+.stButton > button[kind="primary"]:hover {background-color:#11645f !important; color:#ffffff !important;}
+.stButton > button[kind="secondary"] {background-color:#ffffff !important; color:#29251f !important; border:1px solid #bcb4aa !important;}
+.stButton > button[kind="secondary"]:hover {border-color:#167d78 !important; color:#11645f !important;}
+.stButton > button:disabled {opacity:.5 !important;}
 </style>""", unsafe_allow_html=True)
 
 FILE = Path(__file__).with_name('57577_cards.xlsx')
