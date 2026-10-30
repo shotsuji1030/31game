@@ -48,10 +48,11 @@ def start_game():
                                  selected_hand=None, selected_field=None,
                                  round=1, swaps=0, done=False)
 
-def refill(game):
+def refresh_field(game):
+    """Discard all current field cards and deal a fresh field from the decks."""
     for n in (5, 7):
-        while len(game['field'][n]) < FIELD_COUNTS[n] and game['decks'][n]:
-            game['field'][n].append(game['decks'][n].pop())
+        game['field'][n] = [game['decks'][n].pop()
+                            for _ in range(min(FIELD_COUNTS[n], len(game['decks'][n])))]
 
 def card_html(phrase, n):
     cls = 'five' if n == 5 else 'seven'
@@ -75,6 +76,7 @@ g = st.session_state.game
 with st.sidebar:
     st.header('あそびかた')
     st.write('① 手札を1枚選択  ② 同じ音数の場札を選択  ③ 交換ボタンを押す')
+    st.write('交換するとその場札を山札から1枚補充します。次のラウンドでは場札をすべて入れ替えます。')
     st.write('1ラウンド最大3回、全2ラウンド。交換せずに次へ進むこともできます。')
     if st.button('新しいゲーム', use_container_width=True):
         start_game()
@@ -126,6 +128,9 @@ if not g['done']:
             g['hand'][chosen], g['field'][n][j] = g['field'][n][j], g['hand'][chosen]
             # Exchanged-out card is removed from play rather than left in the field.
             g['field'][n].pop(j)
+            # Refill the exact vacated slot with one fresh card of the same mora count.
+            if g['decks'][n]:
+                g['field'][n].insert(j, g['decks'][n].pop())
             g['selected_hand'] = None
             g['selected_field'] = None
             g['swaps'] += 1
@@ -138,7 +143,7 @@ if not g['done']:
             else:
                 g['round'] += 1
                 g['swaps'] = 0
-                refill(g)
+                refresh_field(g)
             g['selected_hand'] = None
             g['selected_field'] = None
             st.rerun()
