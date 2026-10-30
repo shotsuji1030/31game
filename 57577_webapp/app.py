@@ -24,7 +24,7 @@ justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
 
 FILE = Path(__file__).with_name('57577_cards.xlsx')
 PATTERN = [5, 7, 5, 7, 7]
-FIELD_COUNTS = {5: 3, 7: 5}
+FIELD_COUNTS = {5: 5, 7: 5}
 
 @st.cache_data(show_spinner=False)
 def load_cards(path, mtime):
