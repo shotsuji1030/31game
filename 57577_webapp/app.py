@@ -22,6 +22,28 @@ justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
 .stButton > button:disabled {opacity:.5 !important;}
 </style>""", unsafe_allow_html=True)
 
+/* ダウンロードボタン */
+.stDownloadButton > button {
+    background-color: #ffffff !important;
+    color: #29251f !important;
+    border: 1px solid #bcb4aa !important;
+    border-radius: 10px !important;
+}
+
+/* マウスを重ねたとき */
+.stDownloadButton > button:hover {
+    background-color: #e9f3fa !important;
+    color: #167d78 !important;
+    border-color: #167d78 !important;
+}
+
+/* クリックしたとき */
+.stDownloadButton > button:active,
+.stDownloadButton > button:focus {
+    background-color: #d5ebe8 !important;
+    color: #11645f !important;
+}
+
 FILE = Path(__file__).with_name('57577_cards.xlsx')
 PATTERN = [5, 7, 5, 7, 7]
 FIELD_COUNTS = {5: 5, 7: 5}
@@ -151,7 +173,7 @@ else:
     st.success('短歌が完成しました！')
     poem = '\n'.join(g['hand'])
     st.code(poem, language=None)
-    st.download_button('短歌をテキスト保存', poem, file_name='57577_tanka.txt', mime='text/plain',type='primary' if selected else 'secondary')
+    st.download_button('短歌をテキスト保存', poem, file_name='57577_tanka.txt', mime='text/plain')
     if st.button('もう一度遊ぶ', type='primary'):
         start_game()
         st.rerun()
