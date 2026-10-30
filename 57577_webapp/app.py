@@ -171,7 +171,7 @@ if not g['done']:
         st.info('このラウンドの交換は3回までです。次へ進んでください。')
 else:
     st.success('短歌が完成しました！')
-    #poem = '\n'.join(g['hand'])
+    poem = '\n'.join(g['hand'])
     st.code(poem, language=None)
     st.download_button('短歌をテキスト保存', poem, file_name='57577_tanka.txt', mime='text/plain')
     if st.button('もう一度遊ぶ', type='primary'):
