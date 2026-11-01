@@ -122,7 +122,7 @@ for i, (n, phrase) in enumerate(zip(PATTERN, g['hand'])):
 if not g['done']:
     st.divider()
     st.subheader('場のカード')
-    st.caption('手札を選ぶと、交換可能な音数のカードを選べます。')
+    #st.caption('手札を選ぶと、交換可能な音数のカードを選べます。')
     chosen = g['selected_hand']
     allowed = PATTERN[chosen] if chosen is not None else None
     for n in (5, 7):
