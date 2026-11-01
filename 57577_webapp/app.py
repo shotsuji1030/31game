@@ -81,8 +81,8 @@ def card_html(phrase, n):
     import html
     return f'<div class="card {cls}"><div class="kind">{n}音</div><div class="phrase">{html.escape(phrase)}</div></div>'
 
-st.title('31')
-st.caption('短歌をつくろう。')
+#st.title('31')
+#st.caption('短歌をつくろう。')
 if not FILE.exists():
     st.error('57577_cards.xlsx が見つかりません。app.py と同じフォルダに置いてください。')
     st.stop()
