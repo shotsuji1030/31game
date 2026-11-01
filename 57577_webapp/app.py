@@ -7,7 +7,7 @@ import streamlit as st
 st.set_page_config(page_title="31 | 短歌カードゲーム", page_icon="㉛", layout="wide")
 st.markdown("""<style>
 .stApp {background: #faf8f3; color: #29251f;}
-.card {border: 1px solid #d9d1c4; border-radius: 12px; padding: 20px 6px;
+.card {border: 1px solid #d9d1c4; border-radius: 8px; padding: 20px 6px;
 text-align:center; background:white; min-height:60px; display:flex; flex-direction:column;
 justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
 .card.five {background:#e9f3fa;} .card.seven {background:#fceee5;}
