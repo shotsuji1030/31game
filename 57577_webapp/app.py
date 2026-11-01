@@ -11,7 +11,7 @@ st.markdown("""<style>
 text-align:center; background:white; min-height:60px; display:flex; flex-direction:column;
 justify-content:center; gap:6px; box-shadow:0 2px 5px #0000000c;}
 .card.five {background:#e9f3fa;} .card.seven {background:#fceee5;}
-.kind {font-size:12px;color:#746b63;} .phrase {font-size:15px;font-weight:500; overflow-wrap:anywhere; color:#29251f;}
+.kind {font-size:12px;color:#746b63;} .phrase {font-size:15px;font-weight:300; overflow-wrap:anywhere; color:#29251f;}
 /* 選択状態を黒ではなく明るい青緑に統一 */
 .stButton > button[kind="primary"], .stDownloadButton > button[kind="primary"] {
  background-color:#167d78 !important; color:#ffffff !important; border:2px solid #167d78 !important;
