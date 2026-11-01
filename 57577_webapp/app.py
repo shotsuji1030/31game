@@ -9,7 +9,7 @@ st.markdown("""<style>
 .stApp {background: #faf8f3; color: #29251f;}
 .card {border: 1px solid #d9d1c4; border-radius: 8px; padding: 10px 6px;
 text-align:center; background:white; min-height:60px; display:flex; flex-direction:column;
-justify-content:center; gap:12px; box-shadow:0 2px 5px #0000000c;}
+justify-content:center; gap:6px; box-shadow:0 2px 5px #0000000c;}
 .card.five {background:#e9f3fa;} .card.seven {background:#fceee5;}
 .kind {font-size:12px;color:#746b63;} .phrase {font-size:15px;font-weight:500; overflow-wrap:anywhere; color:#29251f;}
 /* 選択状態を黒ではなく明るい青緑に統一 */
