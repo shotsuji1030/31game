@@ -107,7 +107,7 @@ with st.sidebar:
     st.write(f'山札: 5音 {len(g["decks"][5])}枚 / 7音 {len(g["decks"][7])}枚')
 
 st.subheader('あなたの短歌')
-cols = st.columns(5)
+cols = st.columns()
 for i, (n, phrase) in enumerate(zip(PATTERN, g['hand'])):
     with cols[i]:
         st.markdown(card_html(phrase, n), unsafe_allow_html=True)
